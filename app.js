@@ -151,6 +151,7 @@ function onRemoveBtn(e) {
     if(cardWrapRef.length > 5){
       cardWrapRef[5].classList.remove('hide');
     } 
+  
   } else {
     return;
   }
@@ -170,7 +171,6 @@ for (let i = 0; i <= cardWrapRef.length - 1; i+=1){
 }
 
 function onLoadMoreBtn() {
-  currentImg += 5;
   for (let i = 0; i <= cardWrapRef.length - 1; i+=1){
     for (let i = currentImg; i < currentImg + 5; i++) {
       if (cardWrapRef[i]) {
@@ -178,6 +178,8 @@ function onLoadMoreBtn() {
       }
   }
 }
+ currentImg += 5;
+
   if (currentImg >= cardWrapRef.length) {
     loadMoreRef.classList.add('hide');
   }
